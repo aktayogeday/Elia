@@ -25,14 +25,14 @@ const Header = () => {
                 </div>
 
                 <nav className={`desktop-nav ${mobileMenuOpen ? 'open' : ''}`}>
-                    <a href="#services" className="nav-link">Hizmetler</a>
-                    <a href="#projects" className="nav-link">Projeler</a>
-                    <a href="#process" className="nav-link">Süreç</a>
-                    <a href="#about" className="nav-link">Hakkımızda</a>
-                    <a href="#contact" className="nav-link">İletişim</a>
+                    <a href="#services" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Hizmetler</a>
+                    <a href="#projects" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Projeler</a>
+                    <a href="#process" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Süreç</a>
+                    <a href="#about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Hakkımızda</a>
+                    <a href="#contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>İletişim</a>
 
                     <div className="mobile-only-actions">
-                        <a href="#contact" className="btn btn-primary" style={{ textDecoration: 'none' }}>Teklif Al</a>
+                        <a href="#contact" className="btn btn-primary" style={{ textDecoration: 'none' }} onClick={() => setMobileMenuOpen(false)}>Teklif Al</a>
                     </div>
                 </nav>
 
