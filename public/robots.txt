@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://eliamimarlik.com/sitemap.xml
