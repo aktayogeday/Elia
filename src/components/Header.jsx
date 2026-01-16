@@ -37,7 +37,7 @@ const Header = () => {
                 </nav>
 
                 <div className="header-actions">
-                    <a href="tel:+905412858763" className="phone-link">
+                    <a href="tel:+905422288490" className="phone-link">
                         <Phone size={20} />
                         <span className="phone-text">Bizi Arayın</span>
                     </a>

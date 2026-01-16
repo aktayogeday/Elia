@@ -291,7 +291,49 @@
         justify-content: center;
     }
 
-    .desktop-nav,
+    .desktop-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        align-items: flex-start;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        color: var(--color-text);
+    }
+
+    .desktop-nav.open {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        font-size: 1.1rem;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .mobile-only-actions {
+        display: block;
+        margin-top: 1.5rem;
+        width: 100%;
+    }
+
+    .mobile-only-actions .btn {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+
     .d-none-mobile {
         display: none;
     }
@@ -304,7 +346,15 @@
         display: none;
     }
 
-    .side-nav.open {
-        /* Implement mobile drawer styles here if needed */
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
