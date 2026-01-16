@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import IntroAnimation from './components/IntroAnimation';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import StatsData from './components/StatsData';
@@ -11,10 +13,27 @@ import ContactCTA from './components/ContactCTA';
 import Footer from './components/Footer';
 
 function App() {
-    // Smooth scroll logic could go here or in a wrapper
+    // Intro Animation State
+    const [showIntro, setShowIntro] = useState(true);
+
+    // Prevent scrolling while intro is playing
+    useEffect(() => {
+        if (showIntro) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [showIntro]);
 
     return (
         <div className="app-wrapper">
+            <AnimatePresence>
+                {showIntro && (
+                    <IntroAnimation onComplete={() => setShowIntro(false)} />
+                )}
+            </AnimatePresence>
+
+            {/* Header hidden initially or fades in can be added later, keeping simple for now */}
             <Header />
             <main>
                 <Hero />
