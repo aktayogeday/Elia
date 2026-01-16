@@ -304,6 +304,8 @@
         align-items: flex-start;
         border-top: 1px solid rgba(0, 0, 0, 0.05);
         color: var(--color-text);
+        z-index: 2000;
+        /* Force on top */
     }
 
     .desktop-nav.open {
@@ -316,6 +318,10 @@
         padding: 1rem 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         font-size: 1.1rem;
+        cursor: pointer;
+        /* Ensure pointer cursor */
+        display: block;
+        /* Ensure full width clickability */
     }
 
     .nav-link::after {
